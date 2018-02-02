@@ -14,6 +14,7 @@ jobs:
       # - image: circleci/postgres:9.4
     
     working_directory: ~/cologne_phonetic
+
     steps:
       - checkout
       - run: mix local.rebar --force
@@ -21,5 +22,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: mix deps.get
       - run: mix deps.compile
-      - run: mix coveralls.cricleci
       - run: mix test
+      - run: mix coveralls.circle
