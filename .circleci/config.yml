@@ -28,6 +28,6 @@ jobs:
 <<<<<<< HEAD
       #- run: mix coveralls.circle
 =======
-      - run: mix coveralls.circle
+      #- run: mix coveralls.circle
 >>>>>>> 7d2897dd387ec5f1a7885bad467de30a12e2eb74
       
