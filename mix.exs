@@ -18,6 +18,8 @@ defmodule ColognePhoneticEx.MixProject do
         "coveralls.detail": :test,
         "coveralls.post":   :test,
         "coveralls.html":   :test,
+        "coveralls.json":   :test,
+        "coveralls.circle":   :test,
       ],
       deps: deps(),
       # Docs
@@ -39,7 +41,7 @@ defmodule ColognePhoneticEx.MixProject do
     {:credo, "~> 0.9.0-rc1", only: [:dev, :test]},  # mix credo übperprüft den Styleguide
     {:ex_dash, "~> 0.1.5", only: :dev},         # For Dash  mix docs.dash
     {:inch_ex, "~> 0.5", only: [:dev, :test]}, # mix inch
-    {:excoveralls,  "~> 0.8", only: :test},
+    {:excoveralls,  "~> 0.7.5", only: :test},
     {:ex_unit_notifier, "~> 0.1", only: :test},
     {:mix_test_watch, "~> 0.2", only: :dev, runtime: false},  # Automatically run your Elixir project's tests each time you save a file.
     {:bunt, "~> 0.2.0"}

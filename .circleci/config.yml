@@ -23,4 +23,6 @@ jobs:
       - run: mix deps.get
       - run: mix deps.compile
       - run: mix test
+      - run: mix coveralls.json
+      - run: mix coveralls.circle
       - run: bash <(curl -s https://codecov.io/bash)
