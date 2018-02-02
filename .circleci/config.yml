@@ -14,6 +14,9 @@ jobs:
       # - image: circleci/postgres:9.4
     
     working_directory: ~/cologne_phonetic
+test:
+  override:
+    - mix coveralls.circle
 
     steps:
       - checkout
@@ -23,4 +26,3 @@ jobs:
       - run: mix deps.get
       - run: mix deps.compile
       - run: mix test
-      - run: mix coveralls.circle
