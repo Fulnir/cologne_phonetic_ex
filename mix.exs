@@ -1,4 +1,7 @@
 defmodule ColognePhoneticEx.MixProject do
+  @moduledoc """
+  
+  """
   use Mix.Project
 
   def project do
@@ -18,7 +21,7 @@ defmodule ColognePhoneticEx.MixProject do
       ],
       deps: deps(),
       # Docs
-      docs: docs() 
+      docs: docs()
     ]
   end
 
@@ -39,25 +42,24 @@ defmodule ColognePhoneticEx.MixProject do
     {:excoveralls,  "~> 0.7.2", only: :test},
     {:ex_unit_notifier, "~> 0.1", only: :test},
     {:mix_test_watch, "~> 0.2", only: :dev, runtime: false},  # Automatically run your Elixir project's tests each time you save a file.
-    {:poison, "~> 2.0", override: true},
-    {:httpoison, "~> 1.0"},
     {:bunt, "~> 0.2.0"}
   ]
   end
 
   defp description do
     """
-    A simple http based database wrapper for dgraph.
+    Calculates and returns the "Cologne Phonetic" (Kölner Phonetik) code for the given string.
+    It's the phonetic code for the  German language.
     """
   end
   defp package do
     # These are the default files included in the package
     [
-      name: :dgraph_ex,
+      name: :cologne_phonetic_ex,
       files: ["lib", "mix.exs", "README*", "LICENSE*", ".iex.exs"],
       maintainers: ["Edwin Bühler"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/Fulnir/dexgraph"}
+      links: %{"GitHub" => "https://github.com/Fulnir/cologne_phonetic_ex"}
     ]
   end
 
@@ -65,9 +67,8 @@ defmodule ColognePhoneticEx.MixProject do
     [
       name: "ColognePhoneticEx",
       main: "README",
-      formatters: ["html", "epub"],
-      source_url: "https://github.com/Fulnir/dexgraph",
-      homepage_url: "https://github.com/Fulnir/dexgraph",
+      formatters: ["html"],
+      source_url: "https://github.com/Fulnir/cologne_phonetic_ex",
       extras: [
         "README.md"
       ]
