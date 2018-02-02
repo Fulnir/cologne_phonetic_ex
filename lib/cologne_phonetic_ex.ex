@@ -17,7 +17,7 @@ defmodule ColognePhoneticEx do
   """
   require Logger
 
- @colognePhoneticTable %{
+ @cologne_phonetic_table %{
    "a" => "0",
    "ä" => "0",
    "e" => "0",
@@ -63,33 +63,33 @@ defmodule ColognePhoneticEx do
       term ->
         i = 0
         term_downcase = String.downcase(term)
-        phonetic_string = each_char(i, String.graphemes(term_downcase), term_downcase, " ","")
+        phonetic_string = each_char(i,
+          String.graphemes(term_downcase), term_downcase, " ", "")
         trimmed_phonetic_string = String.replace(phonetic_string, " ", "")
-        trimmed_phonetic_string = String.replace(trimmed_phonetic_string, "0", "")
+        trimmed_phonetic_string = 
+          String.replace(trimmed_phonetic_string, "0", "")
         trimmed_phonetic_string
-      _ -> ""
     end
   end
 
-  defp each_char(i, [], term, previous_code, current_phonetic_string) do
-    current_phonetic_string
+  defp each_char(_, [], _, _, current) do
+    current
   end
 
   @spec each_char(Integer, [String | String], String, String, String) :: String
-  defp each_char(i, [head | tail], term, previous_code, current_phonetic_string) do
-    previous = " "
-    follower = " "
-    code = " "
-    phonetic_string = " "
-    if i > 0 do
-      previous = String.at(term, (i - 1))
+  defp each_char(i, [head | tail], term, previous_code, current) do
+    previous = if i > 0 do
+      String.at(term, (i - 1))
+    else
+      " "
     end
-    # (i < aString.length)
-    if (i < (String.length(term) - 1)) do
-      follower = String.at(term, (i + 1))
+    follower = if i < (String.length(term) - 1) do
+      String.at(term, (i + 1))
+    else
+      " "
     end
-    code = if Map.has_key?(@colognePhoneticTable, head) do
-      @colognePhoneticTable[head]
+    code = if Map.has_key?(@cologne_phonetic_table, head) do
+      @cologne_phonetic_table[head]
     else
     case head do
       "h" ->
@@ -116,17 +116,17 @@ defmodule ColognePhoneticEx do
           if i == 1 do
             if ((follower == "a") || (follower == "h") || (follower == "k") || (follower == "l")
               || (follower == "o")  || (follower == "q")   || (follower == "r")  || (follower == "u") || (follower == "x")) do
-              "4"
-            else
               "8"
+            else
+              "4"
             end
           else
             if ((previous == "s") || (previous == "z") || (previous == "ß")) do
               if ((follower == "a") || (follower == "h") || (follower == "k")
                 || (follower == "o")  || (follower == "q") || (follower == "u") || (follower == "x")) do
-                "4"
-              else
                 "8"
+              else
+                "4"
               end
             else
               "8"
@@ -143,11 +143,11 @@ defmodule ColognePhoneticEx do
         end
     end
     phonetic_string = if previous_code != code do
-      current_phonetic_string <> to_string(code)
+      current <> to_string(code)
     else
-      current_phonetic_string
+      current
     end
-    each_char(i, tail, term, code, phonetic_string)
+    each_char(i + 1, tail, term, code, phonetic_string)
   end
 
 end

@@ -68,4 +68,20 @@ defmodule ColognePhoneticExTest do
     assert "657" == as_cologne_phonetic("Nuelr")
   end
 
+  test "Hans = '68'" do
+    assert "68" == as_cologne_phonetic("Hans")
+  end
+
+  test "Franz = '3768'" do
+    assert "3768" == as_cologne_phonetic("Franz")
+  end
+
+  test "Schokolade = '8452'" do
+    assert "8452" == as_cologne_phonetic("Schokolade")
+  end
+  
+  test "Raddampfer = '726137'" do
+    assert "726137" == as_cologne_phonetic("Raddampfer")
+  end
+
 end
