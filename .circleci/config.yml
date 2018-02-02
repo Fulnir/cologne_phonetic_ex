@@ -25,5 +25,9 @@ jobs:
       - run: mix test
       - run: mix coveralls.json
       - run: bash <(curl -s https://codecov.io/bash)
+<<<<<<< HEAD
       #- run: mix coveralls.circle
+=======
+      - run: mix coveralls.circle
+>>>>>>> 7d2897dd387ec5f1a7885bad467de30a12e2eb74
       
