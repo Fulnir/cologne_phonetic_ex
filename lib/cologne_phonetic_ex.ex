@@ -71,7 +71,7 @@ defmodule ColognePhoneticEx do
 
   # for (var i = 0; i < aString.length; i++) {
   #   var each;
-  #   var prevoius;
+  #   var previous;
   #   var follower;
   #   each = aString[i].toLowerCase();
 
@@ -79,7 +79,7 @@ defmodule ColognePhoneticEx do
   #   // (i > 1)
   #   if (i > 0) {
   #     // [i - 1]
-  #     prevoius = aString[i - 1].toLowerCase();
+  #     previous = aString[i - 1].toLowerCase();
   #   }
   #   // (i < aString.length)
   #   if (i < (aString.length - 1)) {
@@ -121,7 +121,7 @@ defmodule ColognePhoneticEx do
   #           code = '8';
   #         }
   #       } else {
-  #         if ((prevoius == 's') || (prevoius == 'z') || (prevoius == 'ß')) {
+  #         if ((previous == 's') || (previous == 'z') || (previous == 'ß')) {
   #           if ((follower == 'a') || (follower == 'h') || (follower == 'k')
   #               || (follower == 'o')  || (follower == 'q') || (follower == 'u') || (follower == 'x')) {
   #             code = '8';
@@ -134,7 +134,7 @@ defmodule ColognePhoneticEx do
   #       }
   #     }
   #     if (each == 'x') {
-  #       if ((prevoius == 'c') || (prevoius == 'k') || (prevoius == 'q')) {
+  #       if ((previous == 'c') || (previous == 'k') || (previous == 'q')) {
   #         code = '8';
   #       } else {
   #         code = '48';
@@ -196,14 +196,48 @@ defmodule ColognePhoneticEx do
           "2"
         end      
       end
-    end
+      if head == "t" do
+        if ((follower == "c") || (follower == "s") || (follower == "z") || (follower == "ß")) do
+          "8"
+        else 
+          "2"
+        end      
+      end
+      if head == "c" do
+        if i == 1 do
+          if ((follower == "a") || (follower == "h") || (follower == "k") || (follower == "l")
+            || (follower == "o")  || (follower == "q")   || (follower == "r")  || (follower == "u") || (follower == "x")) do
+            "4"
+          else
+            "8"
+          end
+        else
+          if ((previous == "s") || (previous == "z") || (previous == "ß")) do
+            if ((follower == "a") || (follower == "h") || (follower == "k")
+              || (follower == "o")  || (follower == "q") || (follower == "u") || (follower == "x")) do
+              "8"
+            else
+              "4"
+            end
+          else
+            "4"
+          end
 
+        end
+      end
+      if head == "x" do
+        if ((previous == "c") || (previous == "k") || (previous == "q")) do
+          "8"
+        else
+          "48"
+        end
+      end
+    end
     phonetic_string = if previous_code != code do
       current_phonetic_string <> to_string(code)
     else
       current_phonetic_string
     end
-    
     each_char(i, tail, term, code, phonetic_string)
   end
 
