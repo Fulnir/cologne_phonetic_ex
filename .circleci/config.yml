@@ -21,4 +21,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: mix deps.get
       - run: mix deps.compile
+      - run: mix coveralls.cricleci
       - run: mix test
