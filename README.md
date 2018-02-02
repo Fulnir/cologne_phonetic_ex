@@ -22,7 +22,7 @@ Die Kölner Phonetik bildet jeden Buchstaben eines Wortes auf eine Ziffer zwisch
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+If [available in Hex](https://hex.pm/packages/cologne_phonetic_ex), the package can be installed
 by adding `cologne_phonetic_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
