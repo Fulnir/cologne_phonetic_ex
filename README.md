@@ -1,6 +1,6 @@
 # ColognePhoneticEx
 
-[![CircleCI](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master.svg?style=shield&circle-token=7f28084aaa0352458962665157b90ed38e35d858](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master) 
+[![CircleCI](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master.svg?style=shield&circle-token=7f28084aaa0352458962665157b90ed38e35d858)](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master) 
 [![Ebert](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex.svg)](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex)
 
 ## Kölner Phonetik
