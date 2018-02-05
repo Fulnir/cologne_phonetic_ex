@@ -1,7 +1,8 @@
 # ColognePhoneticEx
 
-[![CircleCI](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master.svg?style=shield&circle-token=7f28084aaa0352458962665157b90ed38e35d858)](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master) [![Ebert](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex.svg)](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex) [![codecov](https://codecov.io/bb/fulnir/cologne_phonetic_ex/branch/master/graph/badge.svg)](https://codecov.io/bb/fulnir/cologne_phonetic_ex)
-
+[![Build Status](https://semaphoreci.com/api/v1/fulnir/cologne_phonetic_ex/branches/master/shields_badge.svg)](https://semaphoreci.com/fulnir/cologne_phonetic_ex) [![CircleCI](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master.svg?style=shield&circle-token=7f28084aaa0352458962665157b90ed38e35d858)](https://circleci.com/bb/Fulnir/cologne_phonetic_ex/tree/master) 
+[![Ebert](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex.svg)](https://ebertapp.io/github/Fulnir/cologne_phonetic_ex) 
+[![Coverage Status](https://coveralls.io/repos/bitbucket/Fulnir/cologne_phonetic_ex/badge.svg)](https://coveralls.io/bitbucket/Fulnir/cologne_phonetic_ex)
 
 ## Kölner Phonetik
 
@@ -22,13 +23,13 @@ Die Kölner Phonetik bildet jeden Buchstaben eines Wortes auf eine Ziffer zwisch
 
 ## Installation
 
-If [available in Hex](https://hex.pm/packages/cologne_phonetic_ex), the package can be installed
+If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `cologne_phonetic_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:cologne_phonetic_ex, "~> 1.0.0"}
+    {:cologne_phonetic_ex, "~> 0.1.0"}
   ]
 end
 ```
