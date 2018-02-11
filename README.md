@@ -40,4 +40,4 @@ be found at [https://hexdocs.pm/cologne_phonetic_ex](https://hexdocs.pm/cologne_
 
 
 
-Copyright © 2018 Edwin Buehler. All rights reserved.
+Copyright © 2018 Edwin Buehler  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)

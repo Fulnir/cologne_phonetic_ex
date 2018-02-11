@@ -11,9 +11,6 @@ defmodule ColognePhoneticEx do
   phoneticalgorithm but is optimized to match the German language.
 
   [de.wikipedia.org/wiki/Kölner_Phonetik](http://de.wikipedia.org/wiki/Kölner_Phonetik)
-
-  Copyright © 2018 Edwin Buehler. All rights reserved.
-  
   """
   require Logger
 
