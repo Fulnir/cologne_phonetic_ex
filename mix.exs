@@ -1,6 +1,6 @@
 defmodule ColognePhoneticEx.MixProject do
   @moduledoc """
-  
+
   **Cologne phonetics** (also Kölner Phonetik, Cologne process) is a phonetic
   algorithm which assigns to words a sequence of digits, the phonetic code.
   The aim of this procedure is that identical sounding words have the same code
@@ -27,19 +27,18 @@ defmodule ColognePhoneticEx.MixProject do
       description: description(),
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
-        "coveralls":        :test,
+        coveralls: :test,
         "coveralls.detail": :test,
-        "coveralls.post":   :test,
-        "coveralls.html":   :test,
-        "coveralls.json":   :test,
-        "coveralls.circle":   :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test,
+        "coveralls.json": :test,
+        "coveralls.circle": :test
       ],
       deps: deps(),
       # Docs
       docs: docs()
     ]
   end
-
 
   # Run "mix help compile.app" to learn about applications.
   def application do
@@ -50,15 +49,16 @@ defmodule ColognePhoneticEx.MixProject do
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [{:ex_doc, "~> 0.17", only: :dev, runtime: false},
-    {:credo, "~> 0.9.0-rc1", only: [:dev, :test]},
-    {:ex_dash, "~> 0.1.5", only: :dev},
-    {:inch_ex, "~> 0.5", only: [:dev, :test]},
-    {:excoveralls,  "~> 0.7.5", only: :test},
-    {:ex_unit_notifier, "~> 0.1", only: :test},
-    {:mix_test_watch, "~> 0.2", only: :dev, runtime: false},
-    {:bunt, "~> 0.2.0", only: [:dev, :test]}
-  ]
+    [
+      {:ex_doc, "~> 0.17", only: :dev, runtime: false},
+      {:credo, "~> 0.9.0-rc1", only: [:dev, :test]},
+      {:ex_dash, "~> 0.1.5", only: :dev},
+      {:inch_ex, "~> 0.5", only: [:dev, :test]},
+      {:excoveralls, "~> 0.7.5", only: :test},
+      {:ex_unit_notifier, "~> 0.1", only: :test},
+      {:mix_test_watch, "~> 0.2", only: :dev, runtime: false},
+      {:bunt, "~> 0.2.0", only: [:dev, :test]}
+    ]
   end
 
   defp description do
@@ -67,6 +67,7 @@ defmodule ColognePhoneticEx.MixProject do
     It's the phonetic code for the  German language.
     """
   end
+
   defp package do
     # These are the default files included in the package
     [
